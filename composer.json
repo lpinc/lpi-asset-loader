@@ -1,7 +1,7 @@
 {
   "name" : "lpinc/lpi-asset-loader",
   "description" : "LpiAssetLoader is a zf2 module that can be used in zf2 layouts to load front end asset javascript and css files and frameworks",
-  "version" : "0.1.1",
+  "version" : "0.1.3",
   "require" : {
     "php" : ">=5.3"
   },
