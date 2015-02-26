@@ -1,0 +1,49 @@
+<?php
+
+/**
+ * LpiAssetLoader Configuration
+ *
+ * If you have a ./config/autoload/ directory set up for your project, you can
+ * drop this config file in it and change the values as you wish.
+ */
+$settings = array(
+    // base dojo config settings
+   'dojo_config_settings' => array(
+      "baseUrl: '/'",
+      'async: true',
+      'parseOnLoad: true',
+      'isDebug: false'
+   ),
+    // can be used to turn dojo off and on
+   'dojo_on' => true,
+    // load source files or build files
+   'use_source' => true,
+   'base_app_src_path' => '/js/',
+   'base_vendor_src_path' => '/bower_components/',
+   'base_app_build_path' => '/dojoB/',
+   'base_vendor_build_path' => '/dojoB/',
+   // bower or vendor modules
+   'amd_vendor_modules' => array(
+      'dojo' => 'dojo',
+      'dijit' => 'dijit',
+      'dojox' => 'dojox'
+   ),
+   // app modules
+   'amd_app_modules' => array(
+//      'app' => 'app'
+   ),
+    // put build layers here
+   'route_match_build_layers' => array(
+   ),
+   'route_match_css_files' => array(
+   )
+);
+
+/**
+ * You do not need to edit below this line
+ */
+return array(
+    'lpi-asset-loader' => $settings
+);
+
+
