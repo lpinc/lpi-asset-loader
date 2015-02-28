@@ -145,7 +145,7 @@ class AssetLoader {
       }
       $html = null;
       if ($this->AssetConfig->use_source == false) {
-         $html .= sprintf('<script type="text/javascript" src="/%s%s.js"></script>'.PHP_EOL, $this->AssetConfig->base_app_build_path, $layer);
+         $html .= sprintf('<script type="text/javascript" src="%s%s.js"></script>'.PHP_EOL, $this->AssetConfig->base_app_build_path, $layer);
       }
       return $html;
    }
