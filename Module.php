@@ -25,42 +25,16 @@ class Module {
    public function onBootstrap(MvcEvent $e)
    {
        $eventManager = $e->getApplication()->getEventManager();
-       $eventManager->attach('dispatch', array($this, 'setAssetLoaderHelper'), 15);
+       $eventManager->attach('dispatch', array($this, 'setLpiAssetLoaderHelper'), 15);
    }
 
-   public function setAssetLoaderHelper(MvcEvent $e) {
+   public function setLpiAssetLoaderHelper(MvcEvent $e) {
 
        $route_name = $e->getRouteMatch()->getMatchedRouteName();
-
        $ViewModel = $e->getViewModel();
        $sl = $e->getApplication()->getServiceManager();
-       $LpiAssets = $sl->get('LpiAssetLoader');
+       $LpiAssets = $sl->get('AssetLoader');
        $LpiAssets->setRouteMatch($route_name);
-
        $ViewModel->setVariable('LpiAssets', $LpiAssets);
-   }
-
-   public function getServiceConfig()
-   {
-      return array(
-         'factories' => array(
-            'LpiAssetLoader' => function ($sm) {
-
-               $asset_config = null;
-               $AssetConfig = new \LpiAssetLoader\Entity\AssetConfigEntity();
-               $config = $sm->get('config');
-               if (array_key_exists('lpi-asset-loader',$config)) {
-                   foreach ($AssetConfig as $prop => $value) {
-                      if (array_key_exists($prop, $config['lpi-asset-loader'])) {
-                          $AssetConfig->$prop = $config['lpi-asset-loader'][$prop];
-                      }
-                   }
-               }
-               $AssetLoader = new \LpiAssetLoader\Model\AssetLoader($AssetConfig, $asset_config);
-
-               return $AssetLoader;
-            }
-         )
-      );
    }
 }
