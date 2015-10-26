@@ -28,7 +28,7 @@ class AssetLoaderFactory implements FactoryInterface
             }
         }
 
-        $AssetLoader = new \LpiAssetLoader\Model\AssetLoader($AssetConfig, $asset_config);
+        $AssetLoader = new AssetLoader($AssetConfig, $asset_config);
         return $AssetLoader;
     }
 }

@@ -3,6 +3,7 @@
 namespace LpiAssetLoader;
 
 use Zend\Mvc\MvcEvent;
+use LpiAssetLoader\Model\AssetLoader;
 
 class Module {
 
@@ -24,17 +25,16 @@ class Module {
 
    public function onBootstrap(MvcEvent $e)
    {
-       $eventManager = $e->getApplication()->getEventManager();
-       $eventManager->attach('dispatch', array($this, 'setLpiAssetLoaderHelper'), 15);
+      $eventManager = $e->getApplication()->getEventManager();
+      $eventManager->attach('dispatch', array($this, 'setLpiAssetLoaderHelper'), 15);
    }
 
    public function setLpiAssetLoaderHelper(MvcEvent $e) {
 
-       $route_name = $e->getRouteMatch()->getMatchedRouteName();
-       $ViewModel = $e->getViewModel();
-       $sl = $e->getApplication()->getServiceManager();
-       $LpiAssets = $sl->get('AssetLoader');
-       $LpiAssets->setRouteMatch($route_name);
-       $ViewModel->setVariable('LpiAssets', $LpiAssets);
+      $route_name = $e->getRouteMatch()->getMatchedRouteName();
+      $ViewModel = $e->getViewModel();
+      $LpiAssets = $e->getApplication()->getServiceManager()->get(AssetLoader::class);
+      $LpiAssets->setRouteMatch($route_name);
+      $ViewModel->setVariable('LpiAssets', $LpiAssets);
    }
 }

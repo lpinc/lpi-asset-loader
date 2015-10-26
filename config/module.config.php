@@ -9,6 +9,6 @@ return[
    'service_manager' => [
        'factories' => [
            AssetLoader::class => AssetLoaderFactory::class
-       ],
+       ]
    ]
 ];
