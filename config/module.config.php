@@ -1,6 +1,6 @@
 <?php
 
-namespace LpiAssetLoader\;
+namespace LpiAssetLoader;
 
 use LpiAssetLoader\Model\AssetLoader;
 use LpiAssetLoader\Model\AssetLoaderFactory;
