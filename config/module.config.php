@@ -8,7 +8,7 @@ use LpiAssetLoader\Model\AssetLoaderFactory;
 return[
    'service_manager' => [
        'factories' => [
-           AssetLoader::class => AssetLoaderFactory::class
+           'LpiAssetLoader\Model\AssetLoader' => 'LpiAssetLoader\Model\AssetLoaderFactory'
        ]
    ]
 ];

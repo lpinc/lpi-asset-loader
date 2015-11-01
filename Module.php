@@ -3,7 +3,6 @@
 namespace LpiAssetLoader;
 
 use Zend\Mvc\MvcEvent;
-use LpiAssetLoader\Model\AssetLoader;
 
 class Module {
 
@@ -33,7 +32,7 @@ class Module {
 
       $route_name = $e->getRouteMatch()->getMatchedRouteName();
       $ViewModel = $e->getViewModel();
-      $LpiAssets = $e->getApplication()->getServiceManager()->get(AssetLoader::class);
+      $LpiAssets = $e->getApplication()->getServiceManager()->get('LpiAssetLoader\Model\AssetLoader');
       $LpiAssets->setRouteMatch($route_name);
       $ViewModel->setVariable('LpiAssets', $LpiAssets);
    }

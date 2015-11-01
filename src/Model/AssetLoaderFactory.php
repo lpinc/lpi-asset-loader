@@ -5,6 +5,8 @@ namespace LpiAssetLoader\Model;
 use Zend\ServiceManager\FactoryInterface;
 use Zend\ServiceManager\ServiceLocatorInterface;
 
+use LpiAssetLoader\Model\AssetLoader;
+
 class AssetLoaderFactory implements FactoryInterface
 {
 
