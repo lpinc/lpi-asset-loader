@@ -32,8 +32,11 @@ class Module {
 
       $route_name = $e->getRouteMatch()->getMatchedRouteName();
       $ViewModel = $e->getViewModel();
-      $LpiAssets = $e->getApplication()->getServiceManager()->get('LpiAssetLoader\Model\AssetLoader');
-      $LpiAssets->setRouteMatch($route_name);
-      $ViewModel->setVariable('LpiAssets', $LpiAssets);
+      $LpiAssetLoader = $e->getApplication()->getServiceManager()->get('LpiAssetLoader\Model\AssetLoader');
+      $LpiAssetLoader->setRouteMatch($route_name);
+
+      // TODO: delete legacy layout name on version 1.0
+      $ViewModel->setVariable('LpiAssets', $LpiAssetLoader);
+      $ViewModel->setVariable('LpiAssetLoader', $LpiAssetLoader);
    }
 }
