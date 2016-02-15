@@ -35,7 +35,10 @@ class Module {
       $LpiAssetLoader = $e->getApplication()->getServiceManager()->get('LpiAssetLoader\Model\AssetLoader');
       $LpiAssetLoader->setRouteMatch($route_name);
 
-      // TODO: delete legacy layout name on version 1.0
+      /**
+       * TODO: delete/depricate legacy layout object varibale name at version 1.0
+       * Keep for now for back compatibility
+       */
       $ViewModel->setVariable('LpiAssets', $LpiAssetLoader);
       $ViewModel->setVariable('LpiAssetLoader', $LpiAssetLoader);
    }
