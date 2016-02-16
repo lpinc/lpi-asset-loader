@@ -44,7 +44,6 @@ The LpiAssetLoader module has some options to help customize the basic functiona
 If you istalled dojo using bower, then a sample config might look like this:
 
     ```php
-
     $settings = array(
        'dojo_config_settings' => array(
           'async' => true,
@@ -63,17 +62,17 @@ If you istalled dojo using bower, then a sample config might look like this:
     return array(
        'lpi-asset-loader' => $settings
     );
+    ```
 
 ## Example Uses:
 
 ### To configue and intialize dojo in a zend framework view-layout file:
 
     ```php
-       if (is_object($this->LpiAssetLoader)) {
-          echo $this->LpiAssetLoader->getDojoConfig();
-          echo $this->LpiAssetLoader->getDojoInitAssets();
-       }
-
+    if (is_object($this->LpiAssetLoader)) {
+       echo $this->LpiAssetLoader->getDojoConfig();
+       echo $this->LpiAssetLoader->getDojoInitAssets();
+    }
     ```
 
 ### To configue dojo with a custom module in a zend framework layout file:
