@@ -58,7 +58,9 @@ If you istalled dojo using bower, then a sample config might look like this:
           'dojox' => 'dojox'
        )
     );
+    ```
 
+    ````
     return array(
        'lpi-asset-loader' => $settings
     );
