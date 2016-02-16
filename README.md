@@ -43,38 +43,36 @@ The LpiAssetLoader module has some options to help customize the basic functiona
 
 If you istalled dojo using bower, then a sample config might look like this:
 
-    ```
-    $settings = array(
-       'dojo_config_settings' => array(
-          'async' => true,
-          'parseOnLoad' => true
-       ),
-       'dojo_on' => true,
-       'use_source' => true,
-       'base_vendor_src_path' => '/bower_components/',
-       'amd_vendor_modules' => array(
-          'dojo' => 'dojo',
-          'dijit' => 'dijit',
-          'dojox' => 'dojox'
-       )
-    );
-    ```
+```
+$settings = array(
+   'dojo_config_settings' => array(
+      'async' => true,
+      'parseOnLoad' => true
+   ),
+   'dojo_on' => true,
+   'use_source' => true,
+   'base_vendor_src_path' => '/bower_components/',
+   'amd_vendor_modules' => array(
+      'dojo' => 'dojo',
+      'dijit' => 'dijit',
+      'dojox' => 'dojox'
+   )
+);
 
-    ````
-    return array(
-       'lpi-asset-loader' => $settings
-    );
-    ```
+return array(
+   'lpi-asset-loader' => $settings
+);
+```
 
 ## Example Uses:
 
 ### To configue and intialize dojo in a zend framework view-layout file:
 
-    ```
-    if (is_object($this->LpiAssetLoader)) {
-       echo $this->LpiAssetLoader->getDojoConfig();
-       echo $this->LpiAssetLoader->getDojoInitAssets();
-    }
-    ```
+```
+if (is_object($this->LpiAssetLoader)) {
+   echo $this->LpiAssetLoader->getDojoConfig();
+   echo $this->LpiAssetLoader->getDojoInitAssets();
+}
+```
 
 ### To configue dojo with a custom module in a zend framework layout file:
