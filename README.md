@@ -4,7 +4,7 @@ Created by [LPinc](http://livingpages.com/)
 
 ## Introduction
 
-LpiAssetLoader is a Zend Framework 2 module that helps configure the loading of front-end _custom_ or _bower_ javascript and css files and assets.
+LpiAssetLoader is a zend framework 2 - ZF2 - and zend framework 3 - ZF3 - module that helps configure the loading of front-end _custom_ or _bower_ javascript and css files and assets.
 
 This module can be especially handy if you need to load AMD javascript modules in your layouts or view scripts.
 
@@ -13,7 +13,7 @@ This module can be especially handy if you need to load AMD javascript modules i
 #### via github
 
 To install LpiAssetLoader, simply recursively clone this repository (`git clone
---recursive`) into your ZF2 modules directory.
+--recursive`) into your ZF2 or ZF3 modules directory.
 
 #### Or with composer
 

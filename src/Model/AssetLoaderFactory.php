@@ -2,35 +2,30 @@
 
 namespace LpiAssetLoader\Model;
 
-use Zend\ServiceManager\FactoryInterface;
-use Zend\ServiceManager\ServiceLocatorInterface;
-
 use LpiAssetLoader\Model\AssetLoader;
+use LpiAssetLoader\Entity\AssetConfigEntity;
 
-class AssetLoaderFactory implements FactoryInterface
-{
+class AssetLoaderFactory {
 
-    /**
-     * Create service
-     *
-     * @param ServiceLocatorInterface $serviceLocator
-     * @return mixed
-     */
-    public function createService(ServiceLocatorInterface $serviceLocator)
-    {
-
-        $asset_config = null;
-        $AssetConfig = new \LpiAssetLoader\Entity\AssetConfigEntity();
-        $config = $serviceLocator->get('config');
-        if (array_key_exists('lpi-asset-loader',$config)) {
-            foreach ($AssetConfig as $prop => $value) {
-                if (array_key_exists($prop, $config['lpi-asset-loader'])) {
-                    $AssetConfig->$prop = $config['lpi-asset-loader'][$prop];
-                }
+   /**
+    *
+    * @param container
+    * @return LpiAssetLoader\Model\AssetLoader
+    */
+   public function __invoke($container)
+   {
+      $asset_config = null;
+      $AssetConfig = new AssetConfigEntity();
+      $config = $container->get('config');
+      if (array_key_exists('lpi-asset-loader',$config)) {
+         foreach ($AssetConfig as $prop => $value) {
+            if (array_key_exists($prop, $config['lpi-asset-loader'])) {
+               $AssetConfig->$prop = $config['lpi-asset-loader'][$prop];
             }
-        }
+         }
+      }
 
-        $AssetLoader = new AssetLoader($AssetConfig, $asset_config);
-        return $AssetLoader;
-    }
+      $AssetLoader = new AssetLoader($AssetConfig, $asset_config);
+      return $AssetLoader;
+   }
 }
