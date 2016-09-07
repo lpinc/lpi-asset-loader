@@ -14,7 +14,6 @@ class AssetLoaderFactory {
     */
    public function __invoke($container)
    {
-      $asset_config = null;
       $AssetConfig = new AssetConfigEntity();
       $config = $container->get('config');
       if (array_key_exists('lpi-asset-loader',$config)) {
@@ -25,7 +24,7 @@ class AssetLoaderFactory {
          }
       }
 
-      $AssetLoader = new AssetLoader($AssetConfig, $asset_config);
+      $AssetLoader = new AssetLoader($AssetConfig);
       return $AssetLoader;
    }
 }
