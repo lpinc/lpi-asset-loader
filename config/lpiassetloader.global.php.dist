@@ -19,7 +19,7 @@ $settings = array(
     // load source files or build files
    'use_source' => true,
    'base_app_src_path' => '/js/',
-   'base_vendor_src_path' => '/bower_components/',
+   'base_vendor_src_path' => '/node_modules/',
    'base_app_build_path' => '/dojoB/',
    'base_vendor_build_path' => '/dojoB/',
    // bower or vendor modules

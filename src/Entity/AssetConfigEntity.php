@@ -16,7 +16,7 @@ class AssetConfigEntity {
    /*
     *  the source path to vendor javascript relative from docroot path
     */
-   public $base_vendor_src_path = 'bower_components/';
+   public $base_vendor_src_path = 'node_modules/';
 
    /*
     *  the build path to app javascript relative from docroot path

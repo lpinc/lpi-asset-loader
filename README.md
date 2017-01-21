@@ -41,7 +41,7 @@ The LpiAssetLoader module has some options to help customize the basic functiona
 `./vendor/lpinc/lpi-asset-loader/config/lpiassetloader.global.php.dist` to
 `./config/autoload/lpiassetloader.global.php` and change the values as desired.
 
-If you istalled dojo using bower, then a sample config might look like this:
+If you istalled dojo using nodejs npm, then a sample config might look like this:
 
 ```
 $settings = array(
@@ -51,7 +51,7 @@ $settings = array(
    ),
    'dojo_on' => true,
    'use_source' => true,
-   'base_vendor_src_path' => '/bower_components/',
+   'base_vendor_src_path' => '/node_modules/',
    'amd_vendor_modules' => array(
       'dojo' => 'dojo',
       'dijit' => 'dijit',
